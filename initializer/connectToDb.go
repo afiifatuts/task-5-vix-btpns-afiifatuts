@@ -18,3 +18,7 @@ func ConnectToDb() {
 		panic("Failed to connect to db")
 	}
 }
+
+func GetDB() *gorm.DB {
+	return DB
+}
