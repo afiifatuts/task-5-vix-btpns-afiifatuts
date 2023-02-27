@@ -133,6 +133,37 @@ func UserUpdate(c *gin.Context) {
 	})
 }
 
+func UserDelete(c *gin.Context) {
+	db := initializer.GetDB()
+	contentType := helpers.GetContextType(c)
+
+	_, _ = db, contentType
+	User := models.User{}
+
+	id := c.Param("userId")
+
+	err := db.First(&User, id).Error
+	if err != nil {
+		fmt.Println(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err,
+		})
+		return
+	}
+
+	err = db.Delete(&User).Error
+	if err != nil {
+		fmt.Println(err.Error())
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err,
+		})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Your account has been deleted",
+	})
+}
+
 // package controllers
 
 // import (
