@@ -6,9 +6,12 @@ Membentuk API berdasarkan kasus yang telah diberikan. Pada kasus ini, diinstruks
 API yang kalian bentuk adalah POST, GET, PUT, dan DELETE.
 
 Tools :
-Tools yang dapat kalian gunakan : 
+Tools yang digunakan : 
 
 Gin Gonic Framework : https://github.com/gin-gonic/gin 
+
 Gorm : https://gorm.io/index.html 
+
 JWT Go : https://github.com/dgrijalva/jwt-go 
+
 Go Validator : http://github.com/asaskevich/govalidator 
